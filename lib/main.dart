@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_go/NewRoute.dart';
+import 'package:flutter_go/TipRoute.dart';
 
 void main() {
   runApp(const MyApp());
@@ -48,6 +49,27 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Center(
+              child: ElevatedButton(
+                onPressed: () async {
+                  // 打开`TipRoute`，并等待返回结果
+                  var result = await Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return TipRoute(
+                          // 路由参数
+                          text: "我是提示xxxx",
+                        );
+                      },
+                    ),
+                  );
+                  //输出`TipRoute`路由返回结果
+                  print("路由返回值: $result");
+                },
+                child: Text("打开提示页"),
+              ),
+            ),
             const Text(
               'You have pushed the button this many times:',
             ),
