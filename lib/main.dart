@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_go/NewRoute.dart';
 
 void main() {
   runApp(const MyApp());
@@ -49,6 +50,18 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             const Text(
               'You have pushed the button this many times:',
+            ),
+            TextButton(
+              child: Text("open new route"),
+              onPressed: () {
+                //导航到新路由
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) {
+                    return NewRoute();
+                  }),
+                );
+              },
             ),
             Text(
               '$_counter',
