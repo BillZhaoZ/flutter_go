@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_go/NewRoute.dart';
-import 'package:flutter_go/TipRoute.dart';
+import 'package:flutter_go/nav/NewRoute.dart';
+import 'package:flutter_go/nav/TipRoute.dart';
 
 void main() {
   runApp(const MyApp());
